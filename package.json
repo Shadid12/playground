@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "./node_modules/.bin/nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "mongo": "node ./mongodb/mongo_test.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,8 @@
   "dependencies": {
     "express": "^4.15.3",
     "hbs": "^4.0.1",
+    "mongodb": "^2.2.30",
+    "mongoose": "^4.11.1",
     "nodemon": "^1.11.0"
   }
 }
