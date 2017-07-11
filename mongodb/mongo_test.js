@@ -1,8 +1,20 @@
-const mongoose = require('mongoose');
+const client = require('mongodb').MongoClient;
 
-mongoose.connect('mongodb://root:toor@ds149268.mlab.com:49268/shadid', (err, o) => {
+client.connect('mongodb://root:toor@ds149268.mlab.com:49268/shadid', (err, db) => {
 	if(err){
-		console.log("Unable to connect");
+		return console.log("Not working");
 	}
-	console.log(o);
+	console.log("Working man");
+
+	db.collection('Todos').insertOne({
+		text: 'Some text',
+		completed: false
+	}, (err, result) => {
+		if(err){
+			console.log("You are messed bud")
+		}
+		console.log("Data inserted mate");
+	})
+
+	db.close();
 });
